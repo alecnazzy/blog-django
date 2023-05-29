@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %} 
+
+{% block content %}
+
+  <!-- code for deleting a topic -->
+    <p><a href="{% url 'blog:topics' %}">Topics</a></p>
+    <p>Are you sure you want to delete this topic?</p>
+    <form action="{% url 'blog:delete_topic' topic.id %}" method='delete'>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary" name="delete_topic">Delete</button>
+      </form>
+    <p><a href="{% url 'blog:topics' %}">Cancel</a></p>
+
+
+{% endblock content %}

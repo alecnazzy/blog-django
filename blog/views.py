@@ -89,3 +89,22 @@ def edit_entry(request, entry_id):
 
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'blog/edit_entry.html', context)
+
+@login_required
+def delete_entry(request, entry_id):
+    """Delete an existing entry"""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+    if topic.owner != request.user:
+        raise Http404
+    entry.delete()
+    return redirect('blog:topic', topic_id=topic.id)
+
+@login_required
+def delete_topic(request, topic_id):
+    """Delete an existing topic"""
+    topic = Topic.objects.get(id=topic_id)
+    if topic.owner != request.user:
+        raise Http404
+    topic.delete()
+    return redirect('blog:topics')

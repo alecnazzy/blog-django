@@ -9,6 +9,7 @@
         {% for topic in topics %}
             <li><h3>
                 <a href="{% url 'blog:topic' topic.id %}">{{ topic }}</a>
+                <small><a href="{% url 'blog:delete_topic' topic.id %}">delete</a></small>
             </h3></li>
         {% empty %}
             <li><h3>No topics have been added yet.</h3></li>
