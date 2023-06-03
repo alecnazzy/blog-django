@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'users',
 
     # Third-party apps
+    'rest_framework',
+    'api.apps.ApiConfig',
     'bootstrap4',
 
     # Default apps

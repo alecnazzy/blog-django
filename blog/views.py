@@ -4,7 +4,6 @@ from django.http import Http404
 
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
-# Create your views here.
 
 def index(request):
     """The home page for blog"""
