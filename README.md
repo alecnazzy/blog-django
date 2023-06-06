@@ -5,7 +5,9 @@ an account and create post that only they can see.
 
 ### What I used:
 
-- Python with Django
+- Python with the Django framework
+
+- Django Rest framework for api
 
 - Bootstrap4 for css
 
